@@ -1,0 +1,31 @@
+.beer-detail {
+    padding: 20px;
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+}
+
+.beer-detail h2 {
+    margin-bottom: 10px;
+}
+
+.beer-detail p {
+    margin-bottom: 10px;
+}
+
+.beer-detail img {
+    max-width: 100%;
+    height: auto;
+}
+
+.beer-detail button {
+    padding: 10px 20px;
+    background-color: #e63946;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+.beer-image {
+    width: 100px; 
+    height: auto; 
+}

@@ -1,3 +1,4 @@
+import './BeerSelect.css'
 
 const BeerSelect = ({ beers, onBeerSelected }) => {
 
@@ -13,8 +14,6 @@ const BeerSelect = ({ beers, onBeerSelected }) => {
         return null
     }
     
-    console.log(beers)
-
     const handleChange = (event) => {
         const id = event.target.value
         const beer = beers[id]
@@ -23,9 +22,12 @@ const BeerSelect = ({ beers, onBeerSelected }) => {
 
     return (
         <>
+        <h3>Select your beer</h3>
+        <div className="select-container">
         <select onChange={handleChange}>
         {beerSelection}
         </select>
+        </div>
         </>
     )
 

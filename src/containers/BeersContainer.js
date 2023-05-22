@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import BeerSelect from '../components/BeerSelect';
 import BeerDetail from '../components/BeerDetail';
 import BeerFavourite from '../components/BeerFavourite';
+import './BeersContainer.css'
+
 
 const BeersContainer = () => {
 
@@ -31,18 +33,24 @@ const BeersContainer = () => {
         setBeers(updatedBeers)
     }
 
-    const chosenBeer = beers.find(beer => beer.id === selectedBeer)
+    
 
     return (
-        <>
-        <BeerSelect beers={beers} onBeerSelected={onBeerSelected}/>
-        {selectedBeer ? <BeerDetail beer={selectedBeer}/> : null}
-        <BeerFavourite beers={beers} onBeerSelected={onBeerSelected}/>
-        <BeerDetail beer={chosenBeer} handleFavBeer={handleFavBeer}/>
-        </>
+        <div className="container">
+            <BeerSelect beers={beers} onBeerSelected={onBeerSelected} />
+                {selectedBeer && (
+            <BeerDetail
+                beers={beers}
+                beer={selectedBeer}
+                onFavouriteToggle={handleFavBeer}
+            />
+        )}
+        <BeerFavourite beers={beers} onBeerSelected={onBeerSelected} />
+        </div>
     )
-
-
 }
+    
 
 export default BeersContainer
+
+
